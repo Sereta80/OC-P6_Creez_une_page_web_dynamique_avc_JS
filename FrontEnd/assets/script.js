@@ -45,6 +45,7 @@ async function init() {
     displayWorks(allWorks);
 
     // Configure filters buttons
+    listenFiltersBtns(allWorks);
 }
 init();
 
@@ -61,20 +62,20 @@ async function getCategories() {
     const allBtn = document.createElement('button');
     allBtn.innerText = "Tous";
     allBtn.classList.add('categories-btn', 'isActive');
+    allBtn.dataset.id = 0;
 
     // Attach button "Tous" to filters section
     filtersSection.appendChild(allBtn);
 
     // Loop on categories
-    categories.forEach(categorie => {
+    categories.forEach(category => {
         // Create categories buttons
         let categoriesBtn = document.createElement('button');
-        categoriesBtn.innerText = categorie.name;
+        categoriesBtn.innerText = category.name;
         categoriesBtn.classList.add('categories-btn');
 
         // Get categories ID buttons
-        let categoriesId = categoriesBtn.dataset.id;
-        categoriesId = categorie.id;
+        categoriesBtn.dataset.id = category.id;
 
         // Attach buttons to filters section
         filtersSection.appendChild(categoriesBtn);
@@ -84,13 +85,27 @@ async function getCategories() {
 getCategories();
 
 // Listen filters buttons
-function listenFiltersBtns() {
-    const filtersBtn = document.querySelectorAll('.filters button');
+function listenFiltersBtns(allWorks) {
+    const filtersBtn = document.querySelectorAll('.filters .categories-btn');
 
-    filtersBtn.forEach((button, id) => {
+    filtersBtn.forEach((button) => {
         button.addEventListener("click", (event) => {
-            const categoryId = event.target.dataset.id;
-            console.log(categoryId)
+            // Get button ID (number)
+            const btnCategoryId = parseInt(event.target.dataset.id);
+
+            // Filter list
+            if (btnCategoryId === 0) {
+                displayWorks(allWorks);
+            } else {
+                let filteredList = allWorks.filter(work => work.category.id === btnCategoryId);
+                displayWorks(filteredList);
+            }
+
+            // Button style with "isActive" class
+            filtersBtn.forEach(btn => {
+                btn.classList.remove('isActive')
+            });
+            event.target.classList.add('isActive')
         });
     });
 };
