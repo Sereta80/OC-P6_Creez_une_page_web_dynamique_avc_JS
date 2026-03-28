@@ -52,6 +52,7 @@ body {
 	margin:auto;
 	font-family: 'Work Sans' ;
 	font-size: 14px;
+	/* background-color: #FFFEF8; */
 }
 header {
 	display: flex;
@@ -94,9 +95,20 @@ nav li {
 	font-size: 1.2em;
 }
 
+nav li a {
+	text-decoration: none;
+	color: black;
+}
+
+nav li a:hover,
 li:hover {
 	color: #B1663C;
 }
+
+.active-page {
+	font-weight: 600;
+}
+
 #introduction {
 	display: flex;
 	align-items: center;
@@ -170,31 +182,37 @@ li:hover {
 	margin-top: 5px;
 }
 
-#contact {
+#contact,
+#login {
 	width: 50%;
 	margin: auto;
 }
-#contact > * {
+#contact > *,
+#login > * {
 	text-align: center;
 
 }
-#contact h2{
+#contact h2,
+#login h2 {
 	margin-bottom: 20px;
 }
-#contact form {
+#contact form,
+#login form {
 	text-align: left;
 	margin-top:30px;
 	display: flex;
 	flex-direction: column;
 }
 
-#contact input {
+#contact input,
+#login input {
 	height: 50px;
 	font-size: 1.2em;
 	border: none;
 	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
 }
-#contact label {
+#contact label,
+#login label {
 	margin: 2em 0 1em 0;
 }
 #contact textarea {
@@ -211,7 +229,26 @@ input[type="submit"]{
 	width: 180px;
 	text-align: center;
 	border-radius: 60px ;
+	border: unset;
 }
+
+#login {
+	margin-top: 10rem;
+	margin-bottom: 20rem;
+	display: flex;
+    flex-direction: column;
+}
+
+#login a {
+	color: #3D3D3D;
+}
+
+/* footer {
+	height: 60px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+} */
 
 footer nav ul {
 	display: flex;
