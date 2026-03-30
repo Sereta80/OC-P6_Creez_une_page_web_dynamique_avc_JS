@@ -109,3 +109,35 @@ function listenFiltersBtns(allWorks) {
         });
     });
 };
+
+const loginBtn = document.getElementById('login-btn');
+
+// Log in account user
+if (localStorage.getItem("token")) {
+    // Display banner "edition mode"
+    const divElement = document.createElement("div");
+    divElement.classList.add('banner-edition');
+    const imageElement = document.createElement("img");
+    imageElement.src = "./assets/icons/edition-mode-icon.png";
+    const titleElement = document.createElement("p");
+    titleElement.innerText = "Mode édition";
+    divElement.appendChild(imageElement);
+    divElement.appendChild(titleElement);
+    const header = document.querySelector("header");
+    document.body.insertBefore(divElement, header);
+
+    // Replace "login" by "logout"
+    loginBtn.innerText = "logout"
+
+    // Hide filters button
+    const filterClass = document.querySelector(".filters");
+    filterClass.style.display = "none";
+
+    // Display button "Modifier"
+}
+
+// Log out account user
+loginBtn.addEventListener("click", () => {
+    localStorage.removeItem("token");
+    window.location.reload();
+});
