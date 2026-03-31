@@ -143,9 +143,22 @@ li:hover {
 #introduction p {
 	margin-bottom: 0.5em;
 }
+
+.portfolio-header {
+	margin-bottom: 50px;
+	display: flex;
+	justify-content: center;
+    align-items: center;
+	gap: 30px;
+}
+
+.portfolio-header  .container-editing {
+	display: flex;
+	gap: 7px;
+}
+
 #portfolio h2 {
 	text-align: center;
-	margin-bottom: 1em;
 }
 
 /* Filters */

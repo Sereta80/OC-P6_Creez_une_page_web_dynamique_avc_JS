@@ -50,7 +50,7 @@ async function init() {
 init();
 
 async function getCategories() {
-    // Get categories
+    // Get categories (API)
     const response = await fetch("http://localhost:5678/api/categories");
     const categories = await response.json();
     console.log(categories)
@@ -116,7 +116,7 @@ const loginBtn = document.getElementById('login-btn');
 if (localStorage.getItem("token")) {
     // Display banner "edition mode"
     const divElement = document.createElement("div");
-    divElement.classList.add('banner-edition');
+    divElement.classList.add("banner-edition");
     const imageElement = document.createElement("img");
     imageElement.src = "./assets/icons/edition-mode-icon.png";
     const titleElement = document.createElement("p");
@@ -134,6 +134,16 @@ if (localStorage.getItem("token")) {
     filterClass.style.display = "none";
 
     // Display button "Modifier"
+    const galleryTitle = document.querySelector(".portfolio-header");
+    const divEditing = document.createElement("div");
+    divEditing.classList.add("container-editing");
+    const blackImage = document.createElement("img");
+    blackImage.src = "./assets/icons/edition-mode-icon-black.png"
+    const editingBtn = document.createElement("p");
+    editingBtn.innerText = "modifier";
+    divEditing.appendChild(blackImage);
+    divEditing.appendChild(editingBtn);
+    galleryTitle.appendChild(divEditing);
 }
 
 // Log out account user
