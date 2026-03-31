@@ -10,7 +10,8 @@
 	<meta name="description" content="">
 	<link rel="stylesheet" href="./assets/style.css">
 	<link rel="icon" href="./assets/icons/favicon_SB.png">
-	<script src="./assets/script.js" defer></script>
+	<script src="./assets/scripts/script.js" defer></script>
+	<script src="./assets/scripts/modal.js" defer></script>
 </head>
 <body>
 <header>
@@ -67,5 +68,21 @@
 		</ul>
 	</nav>
 </footer>
+
+<aside class="modal-bg">
+	<div class="modal">
+		<section class="modal-header">
+			<img id="arrow-left" src="./assets/icons/arrow-left.png" alt="Flèche gauche">
+			<img id="xmark" src="./assets/icons/xmark.png" alt="Croix pour fermer la modale">
+		</section>
+		<section class="editing-gallery">
+			<button id="photo-btn">Ajouter une photo</button>
+		</section>
+		<section class="editing-form">
+			<button id="validation-btn">Valider</button>
+		</section>
+	</div>
+</aside>
+
 </body>
 </html>

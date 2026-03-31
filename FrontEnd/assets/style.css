@@ -155,6 +155,7 @@ li:hover {
 .portfolio-header  .container-editing {
 	display: flex;
 	gap: 7px;
+	align-items: center;
 }
 
 #portfolio h2 {
@@ -273,16 +274,13 @@ input[type="submit"]:hover {
 	color: #3D3D3D;
 }
 
-/* footer {
-	height: 60px;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-} */
-
 footer nav ul {
 	display: flex;
 	justify-content: flex-end;
 	margin: 2em
 }
 
+/* Modal */
+.modal-bg {
+	display: none;
+}
