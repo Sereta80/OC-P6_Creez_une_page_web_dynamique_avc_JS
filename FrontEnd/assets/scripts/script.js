@@ -35,7 +35,7 @@ function displayWorks(projectsToShow) {
         // Attach figure tag to gallery class
         galleryClass.appendChild(projectElement);
     });
-}
+};
 
 async function init() {
     // Get works only once at the beginning

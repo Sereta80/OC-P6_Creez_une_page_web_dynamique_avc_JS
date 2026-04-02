@@ -34,6 +34,9 @@ body {
 ol, ul {
 	list-style: none;
 }
+a {
+	text-decoration: none;
+}
 blockquote, q {
 	quotes: none;
 }
@@ -61,6 +64,22 @@ header {
 }
 section {
 	margin: 50px 0
+}
+
+.hover-logo-sophie-bluel {
+	transition: transform 300ms ease-in-out;
+}
+
+.hover-logo-sophie-bluel h1 {
+	transition: color 300ms ease-in-out;
+}
+
+.hover-logo-sophie-bluel h1:hover {
+	color: #1D6154;
+}
+
+.hover-logo-sophie-bluel:hover {
+	transform: translateX(20px);
 }
 
 h1{
