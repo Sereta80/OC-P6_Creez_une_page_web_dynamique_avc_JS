@@ -56,7 +56,7 @@
 			<input type="email" name="email" id="email">
 			<label for="message">Message</label>
 			<textarea name="message" id="message" cols="30" rows="10"></textarea>
-			<input type="submit" value="Envoyer">
+			<input type="submit" value="Envoyer" class="button">
 		</form>
 	</section>
 </main>
@@ -73,14 +73,35 @@
 <aside class="modal-bg">
 	<div class="modal">
 		<section class="modal-header">
-			<img id="left-arrow" src="./assets/icons/arrow-left.png" alt="Flèche gauche">
-			<img id="xmark" src="./assets/icons/xmark.png" alt="Croix pour fermer la modale">
+			<div class="navigation-icons">
+				<img id="left-arrow" src="./assets/icons/arrow-left.png" alt="Flèche gauche">
+				<img id="xmark" src="./assets/icons/xmark.png" alt="Croix pour fermer la modale">
+			</div>
+			<h2>Galerie photo</h2>
 		</section>
 		<section class="editing-gallery">
-			<button id="photo-btn">Ajouter une photo</button>
+			<div class="gallery-grid"></div>
+			<button class="button" id="photo-btn">Ajouter une photo</button>
 		</section>
 		<section class="editing-form">
-			<button id="validation-btn">Valider</button>
+			<h2>Ajout photo</h2>
+			<form action="#" method="post">
+				<div class="upload-container">
+					<input type="file" id="file-upload">
+					<label for="file-upload">
+						<img src="./assets/icons/upload-icon.png" alt="Icône pour télécharger une photo">
+						<span id="upload-btn">+ Ajouter photo</span>
+						<span id="additional-txt">jpg, png : 4mo max</span>
+					</label>
+				</div>
+				<label for="title">Titre</label>
+				<input type="text" name="title" id="title">
+				<div class="categories-container">
+					<p>Catégories</p>
+					<select name="Catégories" id="categories-select"></select>
+				</div>
+				<input type="submit" value="Valider" id="validation-btn" class="button">
+			</form>
 		</section>
 	</div>
 </aside>

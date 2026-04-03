@@ -4,6 +4,8 @@ const xmark = document.getElementById('xmark');
 const leftArrow = document.getElementById('left-arrow');
 const photoBtn = document.getElementById('photo-btn');
 const editingGallery = document.querySelector('.editing-gallery');
+const galleryTitle = document.querySelector('.modal-header h2')
+const galleryGrid = document.querySelector('.gallery-grid')
 const editingForm = document.querySelector('.editing-form');
 
 // Open modal and hide left arrow
@@ -28,6 +30,7 @@ modalBackground.addEventListener("click", (event) => {
 photoBtn.addEventListener("click", (event) => {
     editingForm.style.display = "flex";
     editingGallery.style.display = "none";
+    galleryTitle.style.display = "none";
     leftArrow.style.visibility = "visible";
 });
 
@@ -35,6 +38,7 @@ photoBtn.addEventListener("click", (event) => {
 leftArrow.addEventListener("click", (event) => {
     editingForm.style.display = "none";
     editingGallery.style.display = "flex";
+    galleryTitle.style.display = "flex";
     leftArrow.style.visibility = "hidden";
 });
 
@@ -50,13 +54,12 @@ function resetModal() {
 async function getModalWorks() {
     const response = await fetch("http://localhost:5678/api/works");
     const datas = await response.json();
-    console.log(datas);
     return datas;
 };
 
-// Display gallery
+// Display modal gallery
 function displayModalWorks(projectsToEdit) {
-    editingGallery.innerHTML = "";
+    galleryGrid.innerHTML = "";
 
     projectsToEdit.forEach(project => {
 
@@ -66,17 +69,19 @@ function displayModalWorks(projectsToEdit) {
         // Create image element
         const imgElement = document.createElement("img");
         imgElement.src = project.imageUrl;
+        imgElement.classList.add('view');
 
         // Create trash image element
         const trashElement = document.createElement("img");
         trashElement.src = "./assets/icons/trash-icon.png";
+        trashElement.classList.add('trash-icon');
 
         // Attach elements to figure tag
         projectElement.appendChild(imgElement);
         projectElement.appendChild(trashElement);
 
         // Attach figure tag to gallery class
-        editingGallery.appendChild(projectElement);
+        galleryGrid.appendChild(projectElement);
     });
 }
 
@@ -86,3 +91,28 @@ async function initModal() {
 }
 
 initModal();
+
+// Get categories for modal form
+async function getFormCategories() {
+    // Get categories (API)
+    const response = await fetch("http://localhost:5678/api/categories");
+    const categories = await response.json();
+
+    // Target categories select
+    const categoriesSelect = document.getElementById('categories-select');
+
+    // Loop on categories
+    categories.forEach(category => {
+        // Create select option
+        let categoryOption = document.createElement('option')
+        categoryOption.innerText = category.name;
+
+        // Get categories ID
+        categoryOption.value = category.id;
+
+        // Attach to categories select
+        categoriesSelect.appendChild(categoryOption);
+    });
+}
+
+getFormCategories();

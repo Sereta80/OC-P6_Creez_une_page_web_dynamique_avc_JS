@@ -49,11 +49,11 @@ async function init() {
 }
 init();
 
+// Get categories filters
 async function getCategories() {
     // Get categories (API)
     const response = await fetch("http://localhost:5678/api/categories");
     const categories = await response.json();
-    console.log(categories)
 
     // Target filters section
     const filtersSection = document.querySelector('.filters');

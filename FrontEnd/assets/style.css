@@ -49,7 +49,30 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-/** end reset css**/
+/*** end reset cs s***/
+
+/*** Button global style ***/
+.button {
+	font-family: 'Syne';
+	font-weight: 700;
+	color: white;
+	background-color: #1D6154;
+	margin : 2em auto ;
+	width: 180px;
+	text-align: center;
+	border-radius: 60px ;
+	border: unset;
+	cursor: pointer;
+	transition: background-color 300ms;
+	height: 50px;
+	font-size: 14px;
+}
+
+.button:hover {
+	background-color : #0E2F28;
+}
+/*** End button global style ***/
+
 body {
 	max-width: 1140px;
 	margin:auto;
@@ -249,7 +272,9 @@ li:hover {
 }
 
 #contact input,
-#login input {
+#login input,
+.editing-form input,
+.editing-form select {
 	height: 50px;
 	font-size: 1.2em;
 	border: none;
@@ -262,24 +287,6 @@ li:hover {
 #contact textarea {
 	border: none;
 	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
-}
-
-input[type="submit"]{
-	font-family: 'Syne';
-	font-weight: 700;
-	color: white;
-	background-color: #1D6154;
-	margin : 2em auto ;
-	width: 180px;
-	text-align: center;
-	border-radius: 60px ;
-	border: unset;
-	cursor: pointer;
-	transition: background-color 300ms;
-}
-
-input[type="submit"]:hover {
-	background-color : #0E2F28;
 }
 
 #login {
@@ -323,13 +330,153 @@ footer nav ul {
 }
 
 .modal-header {
-	margin: 30px 0px 50px 0px;
+	margin: 30px 0px 0px 0px;
 	display: flex;
+	flex-direction: column;
 	align-items: center;
-	gap: 30rem;
+}
+
+.modal-header .navigation-icons {
+	display: flex;
+    align-items: center;
+    gap: 500px;
+	margin-bottom: 15px;
+}
+
+.modal-header h2,
+.editing-form h2 {
+	color: #000000;
+	font-family: 'Work Sans';
+	font-weight: 400;
 }
 
 .modal .editing-form {
 	display: none;
+}
+
+/* Modal gallery */
+.editing-gallery {
+	display: flex;
+	flex-direction: column;
+}
+
+.editing-gallery .gallery-grid {
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	gap: 10px;
+	row-gap: 25px;
+}
+
+.editing-gallery .gallery-grid,
+.editing-form form .categories-container {
+	padding-bottom: 50px;
+	border-bottom: 1px solid #B3B3B3;
+}
+
+.editing-gallery figure {
+	position: relative;
+}
+
+.editing-gallery figure .view {
+	width: 77px;
+	height: auto;
+}
+
+.editing-gallery figure .trash-icon {
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	cursor: pointer;
+}
+
+/* Modal buttons */
+#photo-btn,
+#validation-btn {
+	width: 240px;
+	height: 37px;
+}
+
+#photo-btn {
+	margin-top: 40px;
+}
+
+#validation-btn {
+	margin-top: 25px;
+	background-color: #A7A7A7;
+}
+
+/* Modal form */
+.editing-form,
+.editing-form form,
+.upload-container label {
+	display: flex;
+    flex-direction: column;
+}
+
+.editing-form {
+	margin-top: 10px;
+	align-items: center;
+}
+
+.editing-form h2 {
+	margin-bottom: 40px;
+}
+
+.editing-form form {
+	gap: 10px;
+}
+
+#file-upload {
+	display: none;
+}
+
+.editing-form input,
+.editing-form select {
+	width: 420px;
+}
+
+.editing-form input{
+	margin-bottom: 20px;
+}
+
+.upload-container {
+	margin-bottom: 15px;
+}
+
+.upload-container label {
+	align-items: center;
+	gap: 10px;
+	background-color: #E8F1F6;
+    padding: 20px;
+    border-radius: 3px;
+	cursor: pointer;
+}
+
+#upload-btn {
+	display: flex;
+    align-items: center;
+    justify-content: center;
+	color: #306685;
+	background-color: #CBD6DC;
+	width: 173px;
+	height: 36px;
+	border-radius: 50px;
+}
+
+#additional-txt {
+	font-size: 10px;
+	color: #444444;
+}
+
+.categories-container p {
+	margin-bottom: 10px;
+}
+
+#categories-select {
+	font-weight: 400;
+    font-family: 'Work Sans';
+    font-size: 14px;
+    color: #444444;
+	padding: 10px;
 }
 /*** End modal ***/
