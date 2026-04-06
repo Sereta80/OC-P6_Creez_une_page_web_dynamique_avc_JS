@@ -9,6 +9,7 @@ const galleryTitle = document.querySelector('.modal-header h2');
 const galleryGrid = document.querySelector('.gallery-grid');
 const galleryView = document.querySelector('.gallery-grid figure')
 const editingForm = document.querySelector('.editing-form');
+const form = document.querySelector('.editing-form form')
 
 // Open modal and hide left arrow
 editingBtn.addEventListener("click", (event) => {
@@ -204,12 +205,16 @@ async function sendNewWork() {
         body: formData
     });
 
-    if (formData === true && response.ok) {
+    if (response.ok) {
         const newWork = await response.json();
         addWorkToModal(newWork);
         addWorkToHp(newWork);
+        modalForm.reset();
+        resetPreview()
     } else {
-        
+        const errorMessage = document.createElement('h3');
+        errorMessage.innerText = "Les champs ne sont pas correctemement remplis !";
+        editingForm.insertBefore(errorMessage, form);
     }
 };
 
@@ -218,8 +223,6 @@ const modalForm = document.querySelector('.editing-form form')
 modalForm.addEventListener("submit", (e) => {
     e.preventDefault();
     sendNewWork();
-    modalForm.reset();
-    resetPreview()
 });
 
 // Add a work to modal

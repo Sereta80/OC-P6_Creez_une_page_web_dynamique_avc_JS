@@ -198,6 +198,7 @@ li:hover {
 	display: flex;
 	gap: 7px;
 	align-items: center;
+	cursor: pointer;
 }
 
 #portfolio h2 {
@@ -384,7 +385,7 @@ footer nav ul {
 
 .editing-gallery figure .view {
 	width: 77px;
-	height: auto;
+	height: 103px;
 }
 
 .editing-gallery figure .trash-icon {
@@ -412,7 +413,7 @@ footer nav ul {
 }
 
 #validation-btn:hover {
-	background-color: #1D6154;
+	background-color: #0E2F28;
 }
 
 /* Modal form */
@@ -429,7 +430,13 @@ footer nav ul {
 }
 
 .editing-form h2 {
-	margin-bottom: 40px;
+	margin-bottom: 30px;
+}
+
+.editing-form h3  {
+	margin-bottom: 10px;
+	color: #D62D2D;
+	font-weight: bold;
 }
 
 .editing-form form {
