@@ -19,6 +19,7 @@ function displayWorks(projectsToShow) {
 
         // Create figure tag
         const projectElement = document.createElement("figure");
+        projectElement.dataset.id = project.id;
 
         // Create image element
         const imgElement = document.createElement("img");

@@ -63,7 +63,7 @@ table {
 	border-radius: 60px ;
 	border: unset;
 	cursor: pointer;
-	transition: background-color 300ms;
+	transition: background-color 300ms  ease-in-out;
 	height: 50px;
 	font-size: 14px;
 }
@@ -343,6 +343,11 @@ footer nav ul {
 	margin-bottom: 15px;
 }
 
+#left-arrow,
+#xmark {
+	cursor: pointer;
+}
+
 .modal-header h2,
 .editing-form h2 {
 	color: #000000;
@@ -403,6 +408,11 @@ footer nav ul {
 #validation-btn {
 	margin-top: 25px;
 	background-color: #A7A7A7;
+	transition: background-color 300ms ease-in-out;
+}
+
+#validation-btn:hover {
+	background-color: #1D6154;
 }
 
 /* Modal form */
@@ -447,9 +457,13 @@ footer nav ul {
 	align-items: center;
 	gap: 10px;
 	background-color: #E8F1F6;
-    padding: 20px;
+    /* padding: 20px; */
     border-radius: 3px;
 	cursor: pointer;
+}
+
+#upload-icon {
+	margin-top: 20px;
 }
 
 #upload-btn {
@@ -466,6 +480,12 @@ footer nav ul {
 #additional-txt {
 	font-size: 10px;
 	color: #444444;
+	margin-bottom: 20px;
+}
+
+.preview {
+	width: 130px;
+	height: auto;
 }
 
 .categories-container p {
