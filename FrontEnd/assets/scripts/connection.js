@@ -22,11 +22,14 @@ form.addEventListener("submit", async(event) => {
 
     // Check login user
     if (loginUser.token) { // login user correct
-        window.localStorage.setItem("token", loginUser.token)
-        window.location.href = "index.html"
+        window.localStorage.setItem("token", loginUser.token);
+        window.location.href = "index.html";
     } else { // login user incorrect
-        const errorMessage = document.createElement("h3")
-        errorMessage.innerText = loginUser.message
-        document.querySelector("#login h2").appendChild(errorMessage)
-    }
-})
+        const existingError = document.querySelector('#login h2 h3');
+        if (existingError === null) {
+            const errorMessage = document.createElement("h3");
+            errorMessage.innerText = loginUser.message;
+            document.querySelector("#login h2").appendChild(errorMessage);
+        };
+    };
+});

@@ -9,12 +9,14 @@ const galleryTitle = document.querySelector('.modal-header h2');
 const galleryGrid = document.querySelector('.gallery-grid');
 const galleryView = document.querySelector('.gallery-grid figure')
 const editingForm = document.querySelector('.editing-form');
-const form = document.querySelector('.editing-form form')
+const form = document.querySelector('.editing-form form');
+const existingMsgError = document.querySelector('.editing-form h3');
 
 // Open modal and hide left arrow
 editingBtn.addEventListener("click", (event) => {
     modalBackground.style.display = "flex";
     leftArrow.style.visibility = "hidden";
+    galleryTitle.style.display = "flex";
 });
 
 // Close modal - click on xmark icon
@@ -53,6 +55,10 @@ function resetModal() {
     editingGallery.style.display = "flex";
     editingForm.style.display = "none";
     leftArrow.style.visibility = "hidden";
+    if (existingMsgError) {
+        // existingMsgError.remove();
+        console.log(existingMsgError);
+    }
 }
 
 // Get works
@@ -205,16 +211,20 @@ async function sendNewWork() {
         body: formData
     });
 
+    // If fields are correctly filled, new word is added
     if (response.ok) {
         const newWork = await response.json();
         addWorkToModal(newWork);
         addWorkToHp(newWork);
         modalForm.reset();
-        resetPreview()
+        resetPreview();
     } else {
-        const errorMessage = document.createElement('h3');
-        errorMessage.innerText = "Les champs ne sont pas correctemement remplis !";
-        editingForm.insertBefore(errorMessage, form);
+        // If fields aren't correctly filled and no error message exist, display a error message
+        if (existingMsgError === null) {
+            const errorMessage = document.createElement('h3');
+            errorMessage.innerText = "Les champs ne sont pas correctemement remplis !";
+            editingForm.insertBefore(errorMessage, form);
+        }
     }
 };
 

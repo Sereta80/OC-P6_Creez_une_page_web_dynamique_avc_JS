@@ -74,16 +74,19 @@ table {
 /*** End button global style ***/
 
 body {
-	max-width: 1140px;
-	margin:auto;
+	margin: auto;
 	font-family: 'Work Sans' ;
 	font-size: 14px;
-	/* background-color: #FFFEF8; */
+	background-color: #FFFEF8;
 }
 header {
 	display: flex;
 	justify-content: space-between;
-	margin: 50px 0
+	padding: 50px 100px;
+}
+main {
+	max-width: 1140px;
+    margin: auto;
 }
 section {
 	margin: 50px 0
@@ -222,6 +225,12 @@ li:hover {
 	border-radius: 60px;
 	border: 1px solid #1D6154;
 	cursor: pointer;
+	transition: all 300ms;
+}
+
+.categories-btn:hover {
+	background-color: #1D6154;
+	color: white;
 }
 
 /* Active button style */
@@ -237,12 +246,12 @@ li:hover {
 	width: 100%;
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
-	grid-column-gap: 20px;
 	grid-row-gap: 20px;
 }
 
 .gallery img {
-	width: 100%;
+	width: 350px;
+	height: 467px;
 
 }
 
@@ -301,10 +310,16 @@ li:hover {
 	color: #3D3D3D;
 }
 
+footer {
+	background-color: white;
+    height: 60px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
 footer nav ul {
-	display: flex;
-	justify-content: flex-end;
-	margin: 2em
+	padding-right: 80px;
 }
 
 /*** Modal ***/
@@ -447,7 +462,7 @@ footer nav ul {
 	display: none;
 }
 
-.editing-form input,
+/* .editing-form input, */
 .editing-form select {
 	width: 420px;
 }
@@ -458,6 +473,7 @@ footer nav ul {
 
 .upload-container {
 	margin-bottom: 15px;
+	width: 420px;
 }
 
 .upload-container label {
@@ -505,5 +521,6 @@ footer nav ul {
     font-size: 14px;
     color: #444444;
 	padding: 10px;
+	width: 420px;
 }
 /*** End modal ***/
