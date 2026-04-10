@@ -47,7 +47,7 @@ git clone https://github.com/Sereta80/OC-P6_Creez_une_page_web_dynamique_avc_JS.
 
 Le projet nécessite un serveur local pour fonctionner.
 
-1. Allez dans le dossier `backend` :
+1. Allez dans le dossier `Backend` :
     
     ```bash
     cd backend
