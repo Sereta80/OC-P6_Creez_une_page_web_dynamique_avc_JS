@@ -56,7 +56,7 @@ table {
 	font-family: 'Syne';
 	font-weight: 700;
 	color: white;
-	background-color: #1D6154;
+	/* background-color: #1D6154; */
 	margin : 2em auto ;
 	width: 180px;
 	text-align: center;
@@ -70,6 +70,14 @@ table {
 
 .button:hover {
 	background-color : #0E2F28;
+}
+
+.valid-btn {
+	background-color: #1D6154;
+}
+
+.gray-btn {
+	background-color: #A7A7A7;
 }
 /*** End button global style ***/
 
@@ -433,7 +441,7 @@ footer nav ul {
 
 #validation-btn {
 	margin-top: 25px;
-	background-color: #A7A7A7;
+	/* background-color: #A7A7A7; */
 	transition: background-color 300ms ease-in-out;
 }
 

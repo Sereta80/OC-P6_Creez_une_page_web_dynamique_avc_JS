@@ -10,6 +10,9 @@ const galleryGrid = document.querySelector('.gallery-grid');
 const galleryView = document.querySelector('.gallery-grid figure')
 const editingForm = document.querySelector('.editing-form');
 const form = document.querySelector('.editing-form form');
+const titleField = document.getElementById('title');
+const categoriesSelect = document.getElementById('categories-select');
+const validityBtn = document.getElementById('validation-btn');
 
 // Open modal and hide left arrow
 editingBtn.addEventListener("click", (event) => {
@@ -54,6 +57,8 @@ function resetModal() {
     editingGallery.style.display = "flex";
     editingForm.style.display = "none";
     leftArrow.style.visibility = "hidden";
+    titleField.value = "";
+    categoriesSelect.value = "1";
 
     const existingMsgError = document.querySelector('.editing-form h3');
         if (existingMsgError) {
@@ -116,10 +121,7 @@ initModal();
 async function getFormCategories() {
     // Get categories (API)
     const response = await fetch("http://localhost:5678/api/categories");
-    const categories = await response.json();
-
-    // Target categories select
-    const categoriesSelect = document.getElementById('categories-select');
+    const categories = await response.json();    
 
     // Loop on categories
     categories.forEach(category => {
@@ -177,6 +179,8 @@ fileUpload.addEventListener("change", (e) => {
     uploadBtn.style.display = "none";
     additionnalTxt.style.display = "none";
     labelFileUpload.appendChild(preview);
+
+    checkFormValidity();
 });
 
 // Reset image preview for modal form
@@ -189,7 +193,33 @@ function resetPreview() {
 };
 
 // Check form validity
+titleField.addEventListener("input", (e) => {
+       checkFormValidity();
+    });
 
+categoriesSelect.addEventListener("change", (e) => {
+        checkFormValidity();
+    })
+
+function checkFormValidity() {
+    // 3 conditions
+    const isFileOK = selectedFile !== undefined;
+    const isTitleOK = titleField.value.trim().length > 0;
+    const isCategoryOk = categoriesSelect.value !== "";
+    console.log("Fichier:", selectedFile !== undefined);
+    console.log("Titre:", titleField.value.trim().length > 0);
+    console.log("Catégorie:", categoriesSelect.value !== "");
+
+    // If the 3 conditions are true
+
+    if (isFileOK && isTitleOK && isCategoryOk) {
+        validityBtn.classList.remove('gray-btn')
+        validityBtn.classList.add('valid-btn');
+    } else {
+        validityBtn.classList.remove('valid-btn');
+        validityBtn.classList.add('gray-btn');
+    };
+};
 
 // Send a new work
 async function sendNewWork() {
