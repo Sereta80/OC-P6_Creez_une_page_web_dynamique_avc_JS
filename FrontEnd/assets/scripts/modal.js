@@ -59,6 +59,8 @@ function resetModal() {
     leftArrow.style.visibility = "hidden";
     titleField.value = "";
     categoriesSelect.value = "1";
+    validityBtn.classList.remove('valid-btn');
+    validityBtn.classList.add('gray-btn');
 
     const existingMsgError = document.querySelector('.editing-form h3');
         if (existingMsgError) {
@@ -206,9 +208,6 @@ function checkFormValidity() {
     const isFileOK = selectedFile !== undefined;
     const isTitleOK = titleField.value.trim().length > 0;
     const isCategoryOk = categoriesSelect.value !== "";
-    console.log("Fichier:", selectedFile !== undefined);
-    console.log("Titre:", titleField.value.trim().length > 0);
-    console.log("Catégorie:", categoriesSelect.value !== "");
 
     // If the 3 conditions are true
 

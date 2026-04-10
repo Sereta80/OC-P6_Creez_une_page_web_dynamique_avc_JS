@@ -485,8 +485,15 @@ footer nav ul {
 	width: 420px;
 }
 
-.editing-form input{
+.editing-form input {
 	margin-bottom: 20px;
+}
+
+.editing-form input#title {
+	font-size: 14px;
+    font-family: 'Work Sans';
+    color: #444444;
+    padding-left: 14px;
 }
 
 .upload-container {
@@ -500,13 +507,6 @@ footer nav ul {
 	background-color: #E8F1F6;
     border-radius: 3px;
 	cursor: pointer;
-}
-
-.upload-container #title {
-	font-size: 14px;
-    font-family: 'Work Sans';
-    color: #444444;
-    padding-left: 14px;
 }
 
 #upload-icon {
