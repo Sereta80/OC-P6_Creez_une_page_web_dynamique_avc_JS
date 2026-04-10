@@ -1,4 +1,5 @@
-# Projet 6 OpenClassrooms : Portfolio de Sophie Bluel (Architecte d'intérieur)
+# Projet 6 OpenClassrooms : <img width="49" height="26" alt="favicon_SB" src="https://github.com/user-attachments/assets/4935ad7f-b892-4cf2-8ae5-797830dc2579" />
+ Portfolio de Sophie Bluel (Architecte d'intérieur)
 
 Ce projet consiste en la création de la page de présentation d'une architecte d'intérieur. Il s'agit d'un site dynamique utilisant une **API** pour la gestion des travaux et de l'authentification.
 
@@ -94,8 +95,8 @@ Pour accéder à l'espace d'administration et tester les fonctionnalités de mod
 			 - `modal.js` : Gestion de la modale et des appels API (POST/DELETE).
 			 - `script.js` : Gestion de la galerie et des filtres.
 		 - `style.css` : fichier pour le style du site 
-    - `index.html`
-    - `login.html`
+    - `index.html` : page d'accueil
+    - `login.html` : page de connexion au compte administrateur
 - `/Backend` : Serveur Node.js fourni pour le projet.
     
 ---
