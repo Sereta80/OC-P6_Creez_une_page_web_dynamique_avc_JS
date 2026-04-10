@@ -25,9 +25,9 @@ form.addEventListener("submit", async(event) => {
         window.localStorage.setItem("token", loginUser.token);
         window.location.href = "index.html";
     } else { // login user incorrect
-        const existingError = document.querySelector('#login h2 h3');
+        const existingError = document.querySelector('#login p');
         if (existingError === null) {
-            const errorMessage = document.createElement("h3");
+            const errorMessage = document.createElement("p");
             errorMessage.innerText = loginUser.message;
             document.querySelector("#login h2").appendChild(errorMessage);
         };

@@ -10,7 +10,6 @@ const galleryGrid = document.querySelector('.gallery-grid');
 const galleryView = document.querySelector('.gallery-grid figure')
 const editingForm = document.querySelector('.editing-form');
 const form = document.querySelector('.editing-form form');
-const existingMsgError = document.querySelector('.editing-form h3');
 
 // Open modal and hide left arrow
 editingBtn.addEventListener("click", (event) => {
@@ -55,10 +54,11 @@ function resetModal() {
     editingGallery.style.display = "flex";
     editingForm.style.display = "none";
     leftArrow.style.visibility = "hidden";
-    if (existingMsgError) {
-        // existingMsgError.remove();
-        console.log(existingMsgError);
-    }
+
+    const existingMsgError = document.querySelector('.editing-form h3');
+        if (existingMsgError) {
+            existingMsgError.remove();
+        }
 }
 
 // Get works
@@ -188,6 +188,9 @@ function resetPreview() {
     additionnalTxt.style.display = "flex";
 };
 
+// Check form validity
+
+
 // Send a new work
 async function sendNewWork() {
     const token = localStorage.getItem("token");
@@ -220,6 +223,7 @@ async function sendNewWork() {
         resetPreview();
     } else {
         // If fields aren't correctly filled and no error message exist, display a error message
+        const existingMsgError = document.querySelector('.editing-form h3');
         if (existingMsgError === null) {
             const errorMessage = document.createElement('h3');
             errorMessage.innerText = "Les champs ne sont pas correctemement remplis !";
