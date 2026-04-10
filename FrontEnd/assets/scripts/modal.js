@@ -24,14 +24,12 @@ editingBtn.addEventListener("click", (event) => {
 // Close modal - click on xmark icon
 xmark.addEventListener("click", (event) => {
     resetModal();
-    resetPreview()
 });
 
 // Close modal - click on modal background
 modalBackground.addEventListener("click", (event) => {
     if (event.target === modalBackground && modalBackground.style.display === "flex") {
         resetModal();
-        resetPreview();
     };
 });
 
@@ -66,6 +64,8 @@ function resetModal() {
         if (existingMsgError) {
             existingMsgError.remove();
         }
+
+    resetPreview();
 }
 
 // Get works

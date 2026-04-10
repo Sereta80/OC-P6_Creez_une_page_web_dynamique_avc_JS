@@ -56,13 +56,11 @@ table {
 	font-family: 'Syne';
 	font-weight: 700;
 	color: white;
-	/* background-color: #1D6154; */
 	margin : 2em auto ;
 	width: 180px;
 	text-align: center;
 	border-radius: 60px ;
 	border: unset;
-	cursor: pointer;
 	transition: background-color 300ms  ease-in-out;
 	height: 50px;
 	font-size: 14px;
@@ -74,10 +72,12 @@ table {
 
 .valid-btn {
 	background-color: #1D6154;
+	cursor: pointer;
 }
 
 .gray-btn {
 	background-color: #A7A7A7;
+	cursor: not-allowed;
 }
 /*** End button global style ***/
 
