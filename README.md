@@ -2,7 +2,7 @@
 
 Ce projet consiste en la création de la page de présentation d'une architecte d'intérieur. Il s'agit d'un site dynamique utilisant une **API** pour la gestion des travaux et de l'authentification.
 
-<img width="400" alt="Aperçu de la page d'accueil avec le compte administrateur connecté" src="https://github.com/user-attachments/assets/c3939bcc-4a41-4432-a5d4-8bc8891cbb97" />
+<img height="700" alt="Aperçu de la page d'accueil avec le compte administrateur connecté" src="https://github.com/user-attachments/assets/c3939bcc-4a41-4432-a5d4-8bc8891cbb97" />
 <img width="400" alt="Aperçu de la page de connexion au compte administrateur" src="https://github.com/user-attachments/assets/2780b96b-a4eb-40e3-b5c2-e480ee6c3525" />
 <img width="400" alt="Aperçu de la galerie de la modale" src="https://github.com/user-attachments/assets/988da828-323d-4517-a82c-cf2063918f6c" />
 <img width="400"  alt="Aperçu du formulaire de la modale" src="https://github.com/user-attachments/assets/77e3b7d0-2798-478f-8c8a-896388665308" />
